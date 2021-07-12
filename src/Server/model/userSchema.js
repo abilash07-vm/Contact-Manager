@@ -1,7 +1,13 @@
 const mongoose = require("mongoose");
 
 module.exports = new mongoose.Schema({
-  username: String,
-  admin: Boolean,
-  password: String,
+  username: {
+    type: String,
+  },
+  admin: {
+    type: Boolean,
+  },
+  password: {
+    type: String,
+  },
 });
