@@ -11,6 +11,17 @@ const addManyContacts = (contacts) => {
     .catch((err) => console.log(`contact add: ${err}`));
 };
 
+const getAllContacts = (req, res) => {
+  Contact.find({})
+    .then((contacts) => {
+      res.status(201).send(contacts);
+    })
+    .catch((err) => {
+      console.log("error at getAllContact " + err);
+    });
+};
+
 module.exports = {
   addManyContacts,
+  getAllContacts,
 };
