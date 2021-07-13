@@ -1,1 +1,26 @@
-<p>contact-new works!</p>
+<mat-card>
+  <mat-card-title>Add Contact</mat-card-title>
+  <mat-card-content>
+    <form>
+      <mat-form-field>
+        <input matInput placeholder="name" />
+        <mat-error align="end">minimum 3 characters</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="address" />
+        <mat-hint align="end"></mat-hint>
+        <mat-error align="end"></mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="phone number" />
+        <mat-hint align="end"></mat-hint>
+        <mat-error align="end"></mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="photo url" />
+        <mat-hint></mat-hint>
+        <mat-error></mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
