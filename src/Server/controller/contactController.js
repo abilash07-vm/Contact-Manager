@@ -12,6 +12,7 @@ const addManyContacts = (contacts) => {
 };
 
 const getAllContacts = (req, res) => {
+  console.log("get all contacts is called!!!");
   Contact.find({})
     .then((contacts) => {
       res.status(201).send(contacts);
@@ -21,7 +22,15 @@ const getAllContacts = (req, res) => {
     });
 };
 
+const addContact = (req, res) => {
+  let newContact = new Contact(req.body);
+  newContact.save().then((data) => {
+    res.status(201).json(data);
+  });
+};
+
 module.exports = {
   addManyContacts,
   getAllContacts,
+  addContact,
 };
