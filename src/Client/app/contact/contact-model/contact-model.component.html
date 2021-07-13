@@ -1,0 +1,12 @@
+<mat-card>
+  <img mat-card-img src="{{ contact.photourl }}" />
+  <mat-card-title
+    ><strong>{{ contact.name }}</strong></mat-card-title
+  >
+  <mat-card-content>
+    <p>{{ contact.address }}</p>
+    <div>
+      <mat-icon>call</mat-icon><span>{{ contact.phone }}</span>
+    </div>
+  </mat-card-content>
+</mat-card>
