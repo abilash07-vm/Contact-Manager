@@ -9,16 +9,25 @@ import { ContactModelComponent } from './contact-model/contact-model.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { ContactNewComponent } from './contact-new/contact-new.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-  declarations: [ContactListComponent, ContactModelComponent, ContactNewComponent],
+  declarations: [
+    ContactListComponent,
+    ContactModelComponent,
+    ContactNewComponent,
+  ],
   imports: [
     CommonModule,
     ContactRoutingModule,
     FormsModule,
+
     // Material
     MatCardModule,
     MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
 })
 export class ContactModule {}

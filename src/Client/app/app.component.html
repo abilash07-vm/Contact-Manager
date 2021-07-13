@@ -1,10 +1,11 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <mat-icon>people</mat-icon>
-    <h1>Contact Manager</h1>
+    <button mat-button routerLink="/contacts">
+      <mat-icon>people</mat-icon><strong>Contact Manager</strong>
+    </button>
     <span class="flex_spacer"></span>
     <button routerLink="/contacts/new" mat-button>
-      <mat-icon>person_add</mat-icon>Add Contact
+      <mat-icon>person_add</mat-icon><strong>Add Contact</strong>
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
