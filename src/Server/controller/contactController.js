@@ -12,7 +12,6 @@ const addManyContacts = (contacts) => {
 };
 
 const getAllContacts = (req, res) => {
-  console.log("get all contacts is called!!!");
   Contact.find({})
     .then((contacts) => {
       res.status(201).send(contacts);
