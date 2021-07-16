@@ -1,26 +1,70 @@
 <mat-card>
   <mat-card-title>Add Contact</mat-card-title>
   <mat-card-content>
-    <form>
+    <form [formGroup]="contactFormGroup">
       <mat-form-field>
-        <input matInput placeholder="name" />
-        <mat-error align="end">minimum 3 characters</mat-error>
+        <input matInput placeholder="name" formControlName="name" required />
+        <mat-hint align="end">minimum 3 characters.</mat-hint>
+        <mat-error
+          align="end"
+          *ngIf="
+            contactFormGroup.controls['name'].errors &&
+            (contactFormGroup.controls['name'].touched ||
+              contactFormGroup.controls['name'].dirty)
+          "
+          >Invalid name</mat-error
+        >
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="address" />
-        <mat-hint align="end"></mat-hint>
-        <mat-error align="end"></mat-error>
+        <input
+          matInput
+          placeholder="address"
+          formControlName="address"
+          required
+        />
+        <mat-hint align="end">street,city,country</mat-hint>
+        <mat-error
+          align="end"
+          *ngIf="
+            contactFormGroup.controls['address'].errors &&
+            (contactFormGroup.controls['address'].touched ||
+              contactFormGroup.controls['address'].dirty)
+          "
+          >Address is required</mat-error
+        >
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="phone number" />
-        <mat-hint align="end"></mat-hint>
-        <mat-error align="end"></mat-error>
+        <input
+          matInput
+          placeholder="phone number"
+          formControlName="phone"
+          required
+        />
+        <mat-hint align="end">10 digit</mat-hint>
+        <mat-error
+          align="end"
+          *ngIf="
+            contactFormGroup.controls['phone'].errors &&
+            (contactFormGroup.controls['phone'].touched ||
+              contactFormGroup.controls['phone'].dirty)
+          "
+          >only 10 numbers are allowed</mat-error
+        >
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="photo url" />
-        <mat-hint></mat-hint>
-        <mat-error></mat-error>
-      </mat-form-field>
+      <div>
+        <input
+          type="file"
+          accept="image/*"
+          (change)="uploadImage($event)"
+          required
+        />
+        <label>Choose file</label>
+      </div>
     </form>
   </mat-card-content>
+  <mat-card-actions>
+    <div>
+      <button (click)="onSubmit(contactFormGroup.value)">Submit</button>
+    </div>
+  </mat-card-actions>
 </mat-card>
