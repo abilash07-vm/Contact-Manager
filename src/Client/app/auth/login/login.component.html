@@ -1,0 +1,28 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="loginFormGroup" (submit)="onLogin()">
+        <mat-form-field>
+          <input
+            class="fullwidth"
+            matInput
+            placeholder="username"
+            type="text"
+            formControlName="username"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            class="fullwidth"
+            matInput
+            placeholder="password"
+            type="password"
+            formControlName="password"
+          />
+        </mat-form-field>
+        <button matButton color="primary">Login</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
