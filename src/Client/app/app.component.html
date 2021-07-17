@@ -4,8 +4,20 @@
       <mat-icon>people</mat-icon><strong>Contact Manager</strong>
     </button>
     <span class="flex_spacer"></span>
-    <button routerLink="/contacts/new" mat-button>
+    <button
+      routerLink="/contacts/new"
+      mat-button
+      *ngIf="this.authServices.isLokedIn()"
+    >
       <mat-icon>person_add</mat-icon><strong>Add Contact</strong>
+    </button>
+    <span class="flex_spacer"></span>
+    <button
+      (click)="onLogout()"
+      mat-button
+      *ngIf="this.authServices.isLokedIn()"
+    >
+      <mat-icon>logout</mat-icon><strong>Logout</strong>
     </button>
   </mat-toolbar-row>
 </mat-toolbar>

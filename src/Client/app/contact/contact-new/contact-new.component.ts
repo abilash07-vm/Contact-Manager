@@ -65,7 +65,6 @@ export class ContactNewComponent implements OnInit {
             );
             linkRef.getDownloadURL().subscribe((url) => {
               this.contactFormGroup.controls['photourl'].setValue(url);
-              console.log(url);
             });
           });
       }
