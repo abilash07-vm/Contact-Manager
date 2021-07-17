@@ -48,7 +48,7 @@
             (contactFormGroup.controls['phone'].touched ||
               contactFormGroup.controls['phone'].dirty)
           "
-          >only 10 numbers are allowed</mat-error
+          >please enter 10 number</mat-error
         >
       </mat-form-field>
       <div>
@@ -63,8 +63,15 @@
     </form>
   </mat-card-content>
   <mat-card-actions>
-    <div>
-      <button (click)="onSubmit(contactFormGroup.value)">Submit</button>
+    <div class="center">
+      <button
+        mat-button
+        color="primary"
+        (click)="onSubmit(contactFormGroup.value)"
+        align="end"
+      >
+        Submit
+      </button>
     </div>
   </mat-card-actions>
 </mat-card>

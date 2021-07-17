@@ -4,13 +4,14 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactRoutingModule } from './contact-routing.module';
 import { ContactModelComponent } from './contact-model/contact-model.component';
+import { ContactNewComponent } from './contact-new/contact-new.component';
 
 // Material
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { ContactNewComponent } from './contact-new/contact-new.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -35,6 +36,7 @@ import { environment } from 'src/Client/environments/environment';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
+    MatButtonModule,
 
     // Firebase
     AngularFireModule.initializeApp(environment.firebaseConfig),
